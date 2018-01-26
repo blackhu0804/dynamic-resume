@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./prism.css">
+  <link rel="stylesheet" href="./default.css">
+  <style id="cssCode">
+  
+  </style>
+</head>
+<body>
+  <pre id="text"></pre>
+
+  <script src="./prism.js"></script>
+  <script>
+    var result = 
+      `
+      /* 
+        你好，我是Black。
+        我将以讲义的动画介绍我自己，只用文字太单调了。
+      */
+      
+      /* 首先我们改下背景 */
+      html {
+        background: #ccc;
+        font-size: 16px;
+      }
+      /* 下面我们加个边框 */
+      #text {
+        border: 1px solid red;
+      }
+      /* 下面将代码高亮 */
+      .token.comment{color:slategray;}
+      .token.selector{color: #690;}
+      .token.punctuation {color: #999;}
+      .token.property {color: #905;} 
+      /* 剩下的我们以后再做喽，( ^_^ )/~~拜拜 */
+    `
+
+    var n = 0;
+    var id = setInterval( () => {
+      n += 1;
+      text.innerHTML = result.substring(0, n);
+      text.innerHTML = Prism.highlight(text.innerHTML, Prism.languages.css);
+
+      cssCode.innerHTML = result.substring(0, n);
+         
+      if(n >= result.length){
+        window.clearInterval(id)
+      }
+    },50)
+
+  </script>
+</body>
+</html>

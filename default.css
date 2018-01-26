@@ -1,0 +1,7 @@
+* {
+  transition: all .6s;
+}
+.token.comment,.token.selector, .token.punctuation, .token.property{
+  color: black;
+}
+
