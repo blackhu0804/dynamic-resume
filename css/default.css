@@ -1,0 +1,16 @@
+* {
+  transition: all .6s;
+  margin: 0 ;
+  padding: 0;
+}
+#text {
+  width: 45vw; 
+  height: 90vh;
+  overflow: auto;
+}
+.token.comment,.token.selector, .token.punctuation, .token.property{
+  color: black;
+}
+.hidden {
+  display: none;
+}
